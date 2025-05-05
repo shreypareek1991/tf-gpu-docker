@@ -37,7 +37,20 @@ python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU')
 python -c "from tensorflow.python.client import device_lib; device_lib.list_local_devices()"
 ```
 
-The first command will print the TensorFlow version, and the second command will list the available GPUs.
+The first command will print the TensorFlow version, and the second and thirt command will list the available GPUs.
+
+## Expected Output for Above Test
+
+```sh
+>>> python -c "import tensorflow as tf; print(tf.__version__)"
+2.13.0
+
+>>> python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+[PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+
+>>> python -c "from tensorflow.python.client import device_lib; device_lib.list_local_devices()"
+[name: "/device:GPU:0", device_type: "GPU", memory_limit: 15109, locality: {bus_id: 1, links: []}, incarnation: 1234567890, physical_device_desc: "device: 0, name: Tesla T4, pci bus id: 0000:00:1e.0, compute capability: 7.5"]
+```
 
 ## Additional Information
 
